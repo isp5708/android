@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 퀴즈 추가 화면 -->
+
+
+<!--화면의 부모 레이아웃
+-> LinearLayout
+-> 가로 x 세로 : match_parent (레이아웃에 맞게 크기 조정)
+-> 자식들의 배치 방향 : 수평
+-> 컨텍스트 : sdl_insertActivity -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".sdl_insertActivity">
+
+    <!-- 화면의 왼쪽부분 레이아웃
+    -> LinearLayout
+    -> 가로 x 세로 : match_parent
+    -> 가중치 : 0.1
+    -> 배경색 : colorWhite
+    -> 자식들의 배치 방향 : 수직 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.1"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        >
+
+        <!-- 뒤로 버튼
+        -> id : btnGoBack
+        -> 가로 x 세로 : 80dp x wrap_content
+        -> 텍스트 : 뒤로
+        -> 텍스트크기 : 35dp
+        -> 텍스트색상 : colorWhite
+        -> 폰트 : hoongomulsangr
+        -> 배경색 : colorSky -->
+        <Button
+            android:id="@+id/btnGoBack"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="뒤로"
+            android:textSize="35dp"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/hoongomulsangr"
+            android:background="@color/colorSky"/>
+
+        <!-- SDL Quiz 로고 이미지뷰
+        -> 가로 x 세로 : 200dp x 200dp
+        -> 정렬 : 가운데
+        -> 위쪽 마진 : -78dp
+        -> 왼쪽 마진 : 13dp
+        -> 연결 이미지 : sdl3 -->
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-78dp"
+            android:layout_marginLeft="13dp"
+            android:src="@drawable/sdl3"/>
+
+        <!-- 문제수정 에디트테스트
+        -> id : etQuestion
+        -> 가로 x 세로 : match_parent x wrap_content
+        -> 위쪽 마진 : 30dp
+        -> 폰트 : hoongomulsangr
+        -> 힌트 : 문제를 입력해주세요
+        -> 텍스트크기 : 30dp -->
+        <EditText
+            android:id="@+id/etQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/hoongomulsangr"
+            android:hint="문제를 입력해주세요"
+            android:textSize="30dp"/>
+
+        <!-- 객관식 보기1 수정 에디트테스트
+        -> id : et1
+        -> 가로 x 세로 : match_parent x wrap_content
+        -> 위쪽 마진 : 35dp
+        -> 폰트 : hoongomulsangr
+        -> 힌트 : 1번 답 입력 -->
+        <EditText
+            android:id="@+id/et1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/hoongomulsangr"
+            android:hint="1번 답 입력"/>
+
+        <!-- 객관식 보기2 수정 에디트테스트
+        -> id : et2
+        -> 가로 x 세로 : match_parent x wrap_content
+        -> 위쪽 마진 : 15dp
+        -> 폰트 : hoongomulsangr
+        -> 힌트 : 2번 답 입력 -->
+        <EditText
+            android:id="@+id/et2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/hoongomulsangr"
+            android:hint="2번 답 입력"/>
+
+        <!-- 객관식 보기3 수정 에디트테스트
+        -> id : et3
+        -> 가로 x 세로 : match_parent x wrap_content
+        -> 위쪽 마진 : 15dp
+        -> 폰트 : hoongomulsangr
+        -> 힌트 : 3번 답 입력 -->
+        <EditText
+            android:id="@+id/et3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/hoongomulsangr"
+            android:hint="3번 답 입력"/>
+
+        <!-- 객관식 보기4 수정 에디트테스트
+        -> id : et4
+        -> 가로 x 세로 : match_parent x wrap_content
+        -> 위쪽 마진 : 15dp
+        -> 폰트 : hoongomulsangr
+        -> 힌트 : 4번 답 입력 -->
+        <EditText
+            android:id="@+id/et4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/hoongomulsangr"
+            android:hint="4번 답 입력"/>
+
+        <!-- 추가 버튼
+        -> id : btnAdd
+        -> 가로 x 세로 : wrap_content
+        -> 정렬 : 오른쪽
+        -> 위쪽 마진 : 20dp
+        -> 텍스트 : 추가
+        -> 폰트 : hoongomulsangr
+        -> 텍스트크기 : 25dp
+        -> 배경색 : colorAccent -->
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="20dp"
+            android:text="추가"
+            android:fontFamily="@font/hoongomulsangr"
+            android:textSize="25dp"
+            android:background="@color/colorAccent"/>
+
+        <!-- 배재대학교 로고 이미지뷰
+        -> 가로 x 세로 : 200dp x 200dp
+        -> 정렬 : 가운데
+        -> 위쪽 마진 : -35dp
+        -> 연결 이미지 : paichailogo -->
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-35dp"
+            android:src="@drawable/paichailogo"/>
+
+    </LinearLayout>
+
+    <!-- 화면의 오른쪽부분 레이아웃
+    -> LinearLayout
+    -> 가로 x 세로 : match_parent
+    -> 가중치 : 1
+    -> 자식들의 배치 방향 : 수직 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- 객관식 수정 라디오 그룹
+        -> 가로 x 세로 : wrap_content -->
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!-- 객관식 수정1 라디오 버튼
+            -> id : radioButton1
+            -> 가로 x 세로 : wrap_content
+            -> 위쪽 마진 : 290dp -->
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="290dp" />
+
+            <!-- 객관식 수정2 라디오 버튼
+            -> id : radioButton2
+            -> 가로 x 세로 : wrap_content
+            -> 위쪽 마진 : 23dp -->
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23dp" />
+
+            <!-- 객관식 수정3 라디오 버튼
+            -> id : radioButton3
+            -> 가로 x 세로 : wrap_content
+            -> 위쪽 마진 : 24dp -->
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp" />
+
+            <!-- 객관식 수정4 라디오 버튼
+            -> id : radioButton4
+            -> 가로 x 세로 : wrap_content
+            -> 위쪽 마진 : 25dp -->
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp" />
+
+        </RadioGroup>
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+

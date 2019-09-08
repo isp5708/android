@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 앱의 처음화면 -->
+
+
+<!--화면의 부모 레이아웃
+-> RelativeLayout
+-> 가로 x 세로 : match_parent (레이아웃에 맞게 크기 조정)
+-> 자식들의 배치 방향 : 수직
+-> 컨텍스트 : MainActivity -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- 화면의 윗부분 레이아웃
+    -> LinearLayout
+    -> 가로 x 세로 : match_parent (레이아웃에 맞게 크기 조정)
+    -> 자식들의 배치 방향 : 수직 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- 윗부분의 위젯을 나열하기 위한 레이아웃
+        -> LinearLayout
+        -> 가로 x 세로 : match_parent x 350dp
+        -> 자식들의 배치 방향 : 수직
+        -> 배경색 : colorBlue -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:orientation="vertical"
+            android:background="@color/colorBlue">
+
+            <!-- SDL quiz 로고 이미지뷰
+            -> 가로 x 세로 : 180dp x 180dp
+            -> 정렬 :  가운데
+            -> 위쪽 마진 : 40dp
+            -> 연결 이미지 : sdl -->
+            <ImageView
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/sdl" />
+
+            <!-- 퀴즈만들기 로고 텍스트뷰
+            -> 가로 x 세로 : wrap_content (글자에 맞춰 크기조정)
+            -> 정렬 : 가운데
+            -> 텍스트 : 퀴즈 만들기
+            -> 텍스트색상 : #ffffff (white)
+            -> 폰트 : hoongomulsangr
+            -> 텍스트크기 : 40dp -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="퀴즈 만들기"
+                android:textColor="#ffffff"
+                android:fontFamily="@font/hoongomulsangr"
+                android:textSize="40dp" />
+
+        </LinearLayout>
+
+        <!-- 화면의 아랫부분 레이아웃
+        -> LinearLayout
+        -> 가로 x 세로 : match_parent (레이아웃에 맞게 크기 조정)
+        -> 자식들의 배치 방향 : 수직
+        -> 배경색 : colorWhite -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/colorWhite">
+
+            <!-- 아랫부분의 위젯을 나열하기 위한 레이아웃
+            -> LinearLayout
+            -> 가로 x 세로 : match_parent (레이아웃에 맞게 크기 조정)
+            -> 자식들의 배치 방향 : 수평 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <!-- 시작 버튼
+                -> id : Find
+                -> 가로 x 세로 : 300dp x 60dp
+                -> 배경색 : colorSky
+                -> 텍스트 : 시 작
+                -> 폰트 : hoongomulsangr
+                -> 텍스트크기 : 30dp -->
+                <Button
+                    android:id="@+id/Find"
+                    android:layout_width="300dp"
+                    android:layout_height="60dp"
+                    android:background="@color/colorSky"
+                    android:text="시 작"
+                    android:fontFamily="@font/hoongomulsangr"
+                    android:textSize="30dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

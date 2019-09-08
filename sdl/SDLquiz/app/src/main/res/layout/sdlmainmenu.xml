@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 퀴즈 메인메뉴 화면 -->
+
+<!--화면의 부모 레이아웃
+-> RelativeLayout
+-> 가로 x 세로 : match_parent (레이아웃에 맞게 크기 조정)
+-> 자식들의 배치 방향 : 수직
+-> 컨텍스트 : sdlMainMenuActivity -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".sdlMainMenuActivity">
+
+    <!-- 화면 레이아웃
+    -> LinearLayout
+    -> 가로 x 세로 : match_parent
+    -> 자식들의 배치 방향 : 수직
+    -> 배경색 : colorWhite -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorWhite">
+
+        <!-- 뒤로 버튼
+        -> id : btnLogout
+        -> 가로 x 세로 : 80dp x wrap_content
+        -> 텍스트 : 나가기
+        -> 배경색 : colorSky
+        -> 텍스트색상 : colorWhite
+        -> 텍스트크기 : 30dp
+        -> 폰트 : hoongomulsangr -->
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="나가기"
+            android:background="@color/colorSky"
+            android:textColor="@color/colorWhite"
+            android:textSize="30dp"
+            android:fontFamily="@font/hoongomulsangr"/>
+
+        <!-- SDL Quiz 로고 이미지뷰
+        -> 가로 x 세로 : 200dp x 200dp
+        -> 정렬 : 가운데
+        -> 위쪽 마진 : -80dp
+        -> 연결 이미지 : sdl3 -->
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-80dp"
+            android:src="@drawable/sdl3"/>
+
+        <!-- 퀴즈만들기 버튼
+        -> id : btnMakeQuiz
+        -> 가로 x 세로 : 300dp x 60dp
+        -> 정렬 : 가운데
+        -> 위쪽 마진 : 100dp
+        -> 텍스트 : 퀴즈만들기
+        -> 폰트 : hoongomulsangr
+        -> 텍스트크기 : 25dp
+        -> 배경색 : colorAccent -->
+        <Button
+            android:id="@+id/btnMakeQuiz"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:text="퀴즈만들기"
+            android:fontFamily="@font/hoongomulsangr"
+            android:textSize="25dp"
+            android:background="@color/colorAccent"/>
+
+        <!-- 퀴즈보기 버튼
+        -> id : btnTakeQuiz
+        -> 가로 x 세로 : 300dp x 60dp
+        -> 정렬 : 가운데
+        -> 위쪽 마진 : 50dp
+        -> 텍스트 : 퀴즈 보기
+        -> 폰트 : hoongomulsangr
+        -> 텍스트크기 : 25dp
+        -> 배경색 : colorYellow -->
+        <Button
+            android:id="@+id/btnTakeQuiz"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="퀴즈 보기"
+            android:fontFamily="@font/hoongomulsangr"
+            android:textSize="25dp"
+            android:background="@color/colorYellow" />
+
+        <!-- 오답체크 버튼
+        -> id : btnWrong
+        -> 가로 x 세로 : 300dp x 60dp
+        -> 정렬 : 가운데
+        -> 위쪽 마진 : 50dp
+        -> 텍스트 : 오답 체크
+        -> 폰트 : hoongomulsangr
+        -> 텍스트크기 : 25dp
+        -> 배경색 : colorPrimary -->
+        <Button
+            android:id="@+id/btnWrong"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="오답 체크"
+            android:fontFamily="@font/hoongomulsangr"
+            android:textSize="25dp"
+            android:background="@color/colorPrimary"/>
+
+        <!-- 배재대학교 로고 이미지뷰
+        -> 가로 x 세로 : 200dp x 200dp
+        -> 정렬 : 가운데
+        -> 위쪽 마진 : -40dp
+        -> 연결 이미지 : paichailogo -->
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-40dp"
+            android:src="@drawable/paichailogo"/>
+
+
+
+    </LinearLayout>
+</RelativeLayout>

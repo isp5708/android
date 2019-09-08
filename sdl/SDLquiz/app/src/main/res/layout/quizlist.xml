@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 퀴즈 리스트 화면 -->
+
+
+<!--화면의 부모 레이아웃
+-> LinearLayout
+-> 가로 x 세로 : match_parent (레이아웃에 맞게 크기 조정)
+-> 자식들의 배치 방향 : 수평
+-> 컨텍스트 : quizlistActivity -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".quizlistActivity">
+
+    <!-- 화면의 왼쪽부분 레이아웃
+    -> LinearLayout
+    -> 가로 x 세로 : match_parent
+    -> 가중치 : 0.5 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5">
+
+        <!-- 레이아웃
+        -> LinearLayout
+        -> 가로 x 세로 : match_parent
+        -> 가중치 : 0.5
+        -> 자식들의 배치 방향 : 수직
+        -> 배경색 : colorWhite -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical"
+            android:background="@color/colorWhite">
+
+            <!-- 레이아웃
+            -> LinearLayout
+            -> 가로 x 세로 : match_parent
+            -> 가중치 : 0.5 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5">
+
+            </LinearLayout>
+
+            <!-- 뒤로 버튼
+            -> id : btnGoBack
+            -> 가로 x 세로 : 80dp x wrap_content
+            -> 텍스트 : 뒤로
+            -> 텍스트크기 : 35dp
+            -> 텍스트색상 : colorWhite
+            -> 폰트 : hoongomulsangr
+            -> 배경색 : colorSky -->
+            <Button
+                android:id="@+id/btnGoBack"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="뒤로"
+                android:textSize="35dp"
+                android:textColor="@color/colorWhite"
+                android:fontFamily="@font/hoongomulsangr"
+                android:background="@color/colorSky"/>
+
+            <!-- QUIZ 로고 텍스트뷰
+            -> 가로 x 세로 : wrap_content
+            -> 정렬 : 가운데
+            -> 텍스트 : Q U I Z
+            -> 폰트 : hoongomulsangr
+            -> 텍스트색상 : colorAccent
+            -> 텍스트크기 : 60dp -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Q U I Z"
+                android:fontFamily="@font/hoongomulsangr"
+                android:textColor="@color/colorAccent"
+                android:textSize="60dp" />
+
+            <!-- 퀴즈목록 리스트뷰
+            -> id : lvQuiz
+            -> 가로 x 세로 : match_parent -->
+            <ListView
+                android:id="@+id/lvQuiz"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 화면의 오른쪽부분 레이아웃
+    -> LinearLayout
+    -> 가로 x 세로 : match_parent
+    -> 가중치 : 1
+    -> 자식들의 배치 방향 : 수직
+    -> 배경색 : colorWhite -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@color/colorWhite">
+
+        <!-- SDL quiz 로고 이미지뷰
+        -> 가로 x 세로 : 120dp x 120dp
+        -> 정렬 : 가운데
+        -> 위쪽 마진 : 30dp
+        -> 연결 이미지 : sdl2 -->
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/sdl2" />
+
+        <!-- 추가 버튼
+        -> id : btnAdd
+        -> 가로 x 세로 : wrap_content
+        -> 텍스트 : 추가
+        -> 왼쪽 마진 : 15dp
+        -> 위쪽 마진 : 90dp
+        -> 폰트 : hoongomulsangr
+        -> 텍스트크기 : 25dp
+        -> 텍스트색상 : colorAccent -->
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 추가 "
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="90dp"
+            android:fontFamily="@font/hoongomulsangr"
+            android:textSize="25dp"
+            android:background="@color/colorAccent"/>
+
+        <!-- 수정 버튼
+        -> id : btnModify
+        -> 가로 x 세로 : wrap_content
+        -> 텍스트 : 수정
+        -> 왼쪽 마진 : 15dp
+        -> 위쪽 마진 : 15dp
+        -> 폰트 : hoongomulsangr
+        -> 텍스트크기 : 25dp
+        -> 텍스트색상 : colorYellow -->
+        <Button
+            android:id="@+id/btnModify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 수정 "
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/hoongomulsangr"
+            android:textSize="25dp"
+            android:background="@color/colorYellow"/>
+
+        <!-- 삭제 버튼
+        -> id : btnDelete
+        -> 가로 x 세로 : wrap_content
+        -> 텍스트 : 삭제
+        -> 왼쪽 마진 : 15dp
+        -> 위쪽 마진 : 15dp
+        -> 폰트 : hoongomulsangr
+        -> 텍스트크기 : 25dp
+        -> 텍스트색상 : colorPrimary -->
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 삭제 "
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/hoongomulsangr"
+            android:textSize="25dp"
+            android:background="@color/colorPrimary"/>
+
+        <!-- 전체삭제 버튼
+        -> id : btnAllDelete
+        -> 가로 x 세로 : wrap_content
+        -> 텍스트 : 전체삭제
+        -> 왼쪽 마진 : 15dp
+        -> 위쪽 마진 : 15dp
+        -> 폰트 : hoongomulsangr
+        -> 텍스트크기 : 25dp
+        -> 텍스트색상 : colorBlue -->
+        <Button
+            android:id="@+id/btnAllDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="전체삭제"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/hoongomulsangr"
+            android:textSize="25dp"
+            android:background="@color/colorBlue"/>
+
+    </LinearLayout>
+</LinearLayout>

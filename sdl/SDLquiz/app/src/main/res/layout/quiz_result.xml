@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 퀴즈 결과 화면 -->
+
+
+<!--화면의 부모 레이아웃
+-> LinearLayout
+-> 가로 x 세로 : match_parent (레이아웃에 맞게 크기 조정)
+-> 자식들의 배치 방향 : 수직
+-> 배경색 : colorWhite -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <!-- 화면의 윗부분 레이아웃
+    -> LinearLayout
+    -> 가로 x 세로 : match_parent (레이아웃에 맞게 크기 조정) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- 뒤로 버튼
+        -> id : btnGoBack
+        -> 가로 x 세로 : 80dp x wrap_content
+        -> 텍스트 : 뒤로
+        -> 텍스트크기 : 35dp
+        -> 텍스트색상 : colorWhite
+        -> 폰트 : hoongomulsangr
+        -> 배경색 : colorSky -->
+        <Button
+            android:id="@+id/btnGoBack"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="뒤로"
+            android:textSize="35dp"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/hoongomulsangr"
+            android:background="@color/colorSky"/>
+
+        <!-- SDL Quiz 로고 이미지뷰
+        -> 가로 x 세로 : 200dp x 200dp
+        -> 정렬 : 가운데
+        -> 위쪽 마진 : -20dp
+        -> 왼쪽 마진 : 20dp
+        -> 연결 이미지 : sdl3 -->
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-20dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/sdl3"/>
+
+    </LinearLayout>
+
+    <!-- 화면의 가운데부분 레이아웃
+    -> LinearLayout
+    -> 가로 x 세로 : match_parent x wrap_content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- 점수 출력 텍스트뷰
+        -> id : tvScore
+        -> 텍스트 : 점수:
+        -> 가로 x 세로 : wrap_content (글자에 맞춰 크기조정)
+        -> 가중치 : 1
+        -> 위쪽 마진 : 50dp
+        -> 폰트 : hoongomulsangr
+        -> 텍스트크기 : 30dp
+        -> 정렬 : 가운데 -->
+        <TextView
+            android:id="@+id/tvScore"
+            android:text="점수: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/hoongomulsangr"
+            android:textSize="30dp"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <!-- 화면의 아랫부분 레이아웃
+    -> LinearLayout
+    -> 가로 x 세로 : match_parent x wrap_content
+    -> 자식들의 배치 방향 : 수평
+    -> 정렬 : 가운데
+    -> 위쪽 마진 : 45dp
+    -> 배경색 : colorWhite -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+        android:background="@color/colorWhite">
+
+        <!-- 오답 확인 버튼
+        -> id : btnWrong
+        -> 가로 x 세로 : wrap_content
+        -> 텍스트 : 오답 확인
+        -> 배경색 : colorDarkYellow
+        -> 폰트 : hoongomulsangr
+        -> 텍스트크기 : 25dp -->
+        <Button
+            android:id="@+id/btnWrong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 오답 확인 "
+            android:background="@color/colorDarkYellow"
+            android:fontFamily="@font/hoongomulsangr"
+            android:textSize="25dp"/>
+
+        <!-- 종료 버튼
+        -> id : btnExit
+        -> 가로 x 세로 : wrap_content
+        -> 텍스트 : 종료
+        -> 배경색 : colorAccent
+        -> 폰트 : hoongomulsangr
+        -> 텍스트크기 : 25dp -->
+        <Button
+            android:id="@+id/btnExit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 종료 "
+            android:background="@color/colorAccent"
+            android:fontFamily="@font/hoongomulsangr"
+            android:textSize="25dp"/>
+
+    </LinearLayout>
+</LinearLayout>

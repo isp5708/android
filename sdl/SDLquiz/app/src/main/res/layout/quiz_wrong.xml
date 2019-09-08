@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 퀴즈 오답체크 화면 -->
+
+
+<!--화면의 부모 레이아웃
+-> LinearLayout
+-> 가로 x 세로 : match_parent (레이아웃에 맞게 크기 조정)
+-> 자식들의 배치 방향 : 수직
+-> 배경색 : colorWhite -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <!-- 화면의 윗부분 레이아웃
+    -> LinearLayout
+    -> 가로 x 세로 : match_parent x wrap_content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- 뒤로 버튼
+        -> id : btnGoBack
+        -> 가로 x 세로 : 80dp x wrap_content
+        -> 텍스트 : 뒤로
+        -> 텍스트크기 : 35dp
+        -> 텍스트색상 : colorWhite
+        -> 폰트 : hoongomulsangr
+        -> 배경색 : colorSky -->
+        <Button
+            android:id="@+id/btnGoBack"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="뒤로"
+            android:textSize="35dp"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/hoongomulsangr"
+            android:background="@color/colorSky"/>
+
+        <!-- SDL Quiz 로고 이미지뷰
+        -> 가로 x 세로 : 200dp x 200dp
+        -> 정렬 : 가운데
+        -> 위쪽 마진 : -20dp
+        -> 왼쪽 마진 : 20dp
+        -> 연결 이미지 : sdl3 -->
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-20dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/sdl3"/>
+
+    </LinearLayout>
+
+    <!-- 화면의 가운데부분 레이아웃
+    -> LinearLayout
+    -> 가로 x 세로 : match_parent x wrap_content
+    -> 자식들의 배치 방향 : 수직
+    -> 가중치 : 1
+    -> 정렬 : 가운데-수직
+    -> 위쪽 마진 : -30dp
+    -> 왼쪽 마진 : 10dp -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:layout_marginTop="-30dp"
+        android:layout_marginLeft="10dp" >
+
+        <!-- 문제 출력 텍스트뷰
+        -> id : tvQuestion
+        -> 가로 x 세로 : match_parent x wrap_content
+        -> 아래쪽 마진 : 40dp
+        -> 텍스트크기 : 20sp -->
+        <TextView
+            android:id="@+id/tvQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:textSize="20sp" />
+
+        <!-- 객관식 보기 라디오 그룹
+        -> 가로 x 세로 : wrap_content -->
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!-- 객관식 보기1 라디오 버튼
+            -> id : rbt1
+            -> 가로 x 세로 : match_parent x wrap_content
+            -> 아래쪽 마진 : 25dp -->
+            <RadioButton
+                android:id="@+id/rbt1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp" />
+
+            <!-- 객관식 보기2 라디오 버튼
+            -> id : rbt2
+            -> 가로 x 세로 : match_parent x wrap_content
+            -> 아래쪽 마진 : 25dp -->
+            <RadioButton
+                android:id="@+id/rbt2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp" />
+
+            <!-- 객관식 보기3 라디오 버튼
+            -> id : rbt3
+            -> 가로 x 세로 : match_parent x wrap_content
+            -> 아래쪽 마진 : 25dp -->
+            <RadioButton
+                android:id="@+id/rbt3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp" />
+
+            <!-- 객관식 보기4 라디오 버튼
+            -> id : rbt4
+            -> 가로 x 세로 : match_parent x wrap_content
+            -> 아래쪽 마진 : 25dp -->
+            <RadioButton
+                android:id="@+id/rbt4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp" />
+
+        </RadioGroup>
+
+        <!-- 정답 출력 텍스트뷰
+        -> id : tvAnswer
+        -> 가로 x 세로 : match_parent x wrap_content
+        -> 텍스트크기 : 18sp -->
+        <TextView
+            android:id="@+id/tvAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <!-- 화면의 아랫부분 레이아웃
+    -> LinearLayout
+    -> 가로 x 세로 : match_parent x wrap_content
+    -> 자식들의 배치 방향 : 수평
+    -> 정렬 : 가운데
+    -> 아래쪽 마진 : 40dp -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="40dp">
+
+        <!-- 이전 버튼
+        -> id : btnBack
+        -> 가로 x 세로 : wrap_content
+        -> 텍스트 : 이전
+        -> 폰트 : hoongomulsangr
+        -> 텍스트크기 : 25dp
+        -> 텍스트색상 : colorYellow -->
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이전"
+            android:fontFamily="@font/hoongomulsangr"
+            android:textSize="25dp"
+            android:background="@color/colorYellow" />
+
+        <!-- 다음 버튼
+        -> id : btnNext
+        -> 가로 x 세로 : wrap_content
+        -> 텍스트 : 다음
+        -> 폰트 : hoongomulsangr
+        -> 텍스트크기 : 25dp
+        -> 텍스트색상 : colorBlue -->
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="다음"
+            android:fontFamily="@font/hoongomulsangr"
+            android:textSize="25dp"
+            android:background="@color/colorBlue" />
+
+        <!-- 종료 버튼
+       -> id : btnExit
+       -> 가로 x 세로 : wrap_content
+       -> 텍스트 : 종료
+       -> 폰트 : hoongomulsangr
+       -> 텍스트크기 : 25dp
+       -> 텍스트색상 : colorAccent -->
+        <Button
+            android:id="@+id/btnExit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="종료"
+            android:fontFamily="@font/hoongomulsangr"
+            android:textSize="25dp"
+            android:background="@color/colorAccent" />
+
+    </LinearLayout>
+</LinearLayout>
